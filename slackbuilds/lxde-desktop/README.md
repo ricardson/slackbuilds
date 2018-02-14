@@ -6,12 +6,13 @@
 
 ## Sound and Video
 
+* Webcam: 
 
 ## Internet
 
 
-* Web Browser: 
-* BiiTorrent:
+* Web Browser: Firefox 
+* BitTorrent: qBittorrent
 
 
 ## Office
@@ -27,5 +28,4 @@
 * File Browser: PCManFM
 * Notepad: gvim
 * Image Viewer: GpicView
-
 
