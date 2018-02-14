@@ -1,1 +1,1 @@
-## My slackbuilds
+## My Slackware area
