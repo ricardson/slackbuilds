@@ -1,0 +1,6 @@
+Farbfeld is a lossless image-format designed to be parsed and piped easily. 
+It is probably the simplest image-format you can find (see FORMAT).
+It does not have integrated compression, but allows compression algorithms to work 
+with it easily by adding little entropy to the image data itself. This beats PNG in many cases.
+Given the free choice of compression algorithms, it is trivial to switch to better and faster ones as they
+show up in the future.
