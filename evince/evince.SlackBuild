@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=evince
-VERSION=${VERSION:-3.26.0}
+VERSION=${VERSION:-3.35.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-ricardson}
 
@@ -104,13 +104,14 @@ CXXFLAGS="$SLKCFLAGS" \
   --disable-static \
   --disable-nautilus \
   --disable-maintainer-mode \
+  --without-gspell \
   --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
 
 # Fix desktop entry
-sed -i "/NoDisplay=true/d" $PKG/usr/share/applications/evince.desktop
+#sed -i "/NoDisplay=true/d" $PKG/usr/share/applications/evince.desktop
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
@@ -120,7 +121,7 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 
 rm -rf $PKG/{usr/share/gtk-doc,etc}
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a AUTHORS COPYING NEWS README $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a AUTHORS COPYING NEWS README.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
