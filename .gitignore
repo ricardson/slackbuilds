@@ -3,4 +3,5 @@
 *.rpm
 *.tar.xz
 *.tgz
+*.gz
 *.*~
