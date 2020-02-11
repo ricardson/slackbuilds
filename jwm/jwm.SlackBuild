@@ -5,7 +5,7 @@
 # Written by Wainamoinen <wainamoinen@gmail.com>
 
 PRGNAM=jwm
-VERSION=${VERSION:-s1685}
+VERSION=${VERSION:-2.3.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -42,7 +42,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xzf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xf $CWD/$PRGNAM-$VERSION.tar.xz
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
